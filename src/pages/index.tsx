@@ -55,7 +55,7 @@ export default function Home() {
             </p>
             <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
               <div>
-                <Link href="/" className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border-0 border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-[#00bdff] via-[#008dff] to-[#a13bf7] hover:drop-shadow-[0_3px_5px_#7d7d7d] md:py-2 md:text-lg md:px-8"
+                <Link href="/dashboard" className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border-0 border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-[#00bdff] via-[#008dff] to-[#a13bf7] hover:drop-shadow-[0_3px_5px_#7d7d7d] md:py-2 md:text-lg md:px-8"
                   >Track Fitness</Link>
               </div>
             </div>
@@ -64,19 +64,6 @@ export default function Home() {
             <Image src="/banner.png" width="600" height="500" alt="Banner" />
           </div>
         </div>
-
-        {/* <div className="max-w-7xl pt-5 pb-20 mx-auto">
-          <div className="flex flex-col text-center w-full mb-5 md:mb-10">
-            <h1 className="text-4xl mb-10 font-bold title-font mb-4 text-[#008dff]">
-              Features
-            </h1>
-          </div>
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
-            <FeatureCard icon={<GiDigitalTrace size={25} />} title="Lorem" desc="Lorem Ipsum is simply dummy text of the printing" />
-            <FeatureCard icon={<SiTrustpilot size={25} />} title="Lorem" desc="Lorem Ipsum is simply dummy text of the printing" />
-            <FeatureCard icon={<MdSecurity size={25} />} title="Lorem" desc="Lorem Ipsum is simply dummy text of the printing" />
-          </dl>
-        </div> */}
       </main>
     </>
   )

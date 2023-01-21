@@ -11,21 +11,25 @@ interface CardProps {
   title: string
   desc: string
   img: string
+  goals: string[]
 }
 
-const Card = ({title, desc, img}: CardProps) => {
+const Card = ({ title, desc, img, goals }: CardProps) => {
   return (
-    <div className="flex justify-center">
-    <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-      <Image className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src={img} width="500" height="500" alt="Icon" />
-      <div className="p-6 flex flex-col justify-start">
-        <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
-        <p className="text-gray-700 text-base mb-4">
-          {desc}
-        </p>
+    <div className="w-1/3 bg-white rounded overflow-hidden shadow-lg">
+      <div className="flex mx-auto justify-center pt-5 w-28">
+        <Image className=" w-full rounded-full h-96 md:h-auto object-cover md:w-48" src={img} width="200" height="200" alt="Icon" />
+      </div>
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{title}</div>
+        <p className="text-gray-700 text-base">{desc}</p>
+      </div>
+      <div className="px-6 pt-4 pb-2">
+        {
+          goals.map(goal => <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2" key={goal}>{goal}</span>)
+        }
       </div>
     </div>
-  </div>
   )
 }
 
@@ -66,8 +70,16 @@ const Dashboard = () => {
           </div>
           <SubTitle title='Achievements' />
           <div className="space-y-2">
-            <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" />
-            <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" />
+            <div className="space-x-2 flex">
+              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+            </div>
+            <div className="space-x-2 flex">
+              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+            </div>
           </div>
         </>
       </Layout>

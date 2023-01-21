@@ -24,7 +24,7 @@ const NavItem = ({ link, icon, name }: NavItemProps) => {
 const Sidebar = () => {
   const navItemObj = [
     {link: "/dashboard", icon:<GiDigitalTrace size={25} />, name: "Dashboard"},
-    {link: "/habbits", icon:<GiDigitalTrace size={25} />, name: "Habbits"},
+    {link: "/fitness", icon:<GiDigitalTrace size={25} />, name: "Fitness"},
     {link: "/wellness", icon:<GiDigitalTrace size={25} />, name: "Wellness"}
   ]
   return (
