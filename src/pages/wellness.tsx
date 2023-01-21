@@ -6,22 +6,7 @@ import Layout from '@/components/layout'
 import Input from '../components/form-elements/input'
 import SubTitle from '@/components/sub-title'
 import Button from '../components/form-elements/button'
-
-interface GoalsCardProps {
-  children: JSX.Element
-  title: string
-}
-
-const GoalsCard = ({ children, title }: GoalsCardProps) => {
-  return (
-    <div className="flex flex-col justify-center p-6 bg-white/60 border border-gray-100 rounded-lg shadow-md">
-    <h5 className="mb-2 text-2xl tracking-tight text-gray-600">{title}</h5>
-    <div className="flex items-center">
-      {children}
-    </div>
-  </div>
-  )
-}
+import GoalCard from '@/components/goal-card'
 
 const Wellness = () => {
   const [isSleepReadOnly, setIsSleepReadOnly] = useState(true)
@@ -46,25 +31,25 @@ const Wellness = () => {
             <div className="flex flex-col md:flex-row md:space-x-5">
               <div className="w-full md:w-1/2 space-y-4">
                 <SubTitle title='Sleep' />
-                <GoalsCard title="Weekly Sleep Goals">
+                <GoalCard title="Weekly Sleep Goals">
                   <>
-                  <input
-                    className={`appearance-none text-center border rounded w-full py-2 px-3 text-gray-600 leading-tight bg-transparent focus:outline-none focus:shadow-outline ${isSleepReadOnly ? 'border-none' : 'border'}`}
-                    id="sleep-goal"
-                    type="number"
-                    name="sleep-goal"
-                    value={sleepGoal}
-                    onChange={(e) => setSleepGoal(parseInt(e.target.value))}
-                    readOnly={isSleepReadOnly}
-                  />
-                  <p className="text-gray-600 px-4">Hours</p>
-                  {
-                    isSleepReadOnly ?
-                      <FiEdit className="text-blue-300" size={20} onClick={() => setIsSleepReadOnly(false)} /> :
-                      <FiCheck className="text-blue-300" size={20} onClick={() => setIsSleepReadOnly(true)} />
-                  }
+                    <input
+                      className={`appearance-none text-center border rounded w-full py-2 px-3 text-gray-600 leading-tight bg-transparent focus:outline-none focus:shadow-outline ${isSleepReadOnly ? 'border-none' : 'border'}`}
+                      id="sleep-goal"
+                      type="number"
+                      name="sleep-goal"
+                      value={sleepGoal}
+                      onChange={(e) => setSleepGoal(parseInt(e.target.value))}
+                      readOnly={isSleepReadOnly}
+                    />
+                    <p className="text-gray-600 px-4">Hours</p>
+                    {
+                      isSleepReadOnly ?
+                        <FiEdit className="text-blue-300" size={20} onClick={() => setIsSleepReadOnly(false)} /> :
+                        <FiCheck className="text-blue-300" size={20} onClick={() => setIsSleepReadOnly(true)} />
+                    }
                   </>
-                </GoalsCard>
+                </GoalCard>
                 <Input
                   id="sleep"
                   name="sleep"
@@ -76,30 +61,25 @@ const Wellness = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-4 mt-5 md:mt-0">
                 <SubTitle title='Wellness' />
-                <GoalsCard title="Weekly Wellness Goal">
+                <GoalCard title="Weekly Wellness Goal">
                   <>
-                  <input
-                    className={`appearance-none text-center border rounded w-full py-2 px-3 text-gray-600 leading-tight bg-transparent focus:outline-none focus:shadow-outline ${isWellnessReadOnly ? 'border-none' : 'border'}`}
-                    id="wellness-goal"
-                    type="number"
-                    name="wellness-goal"
-                    value={wellnessGoal}
-                    onChange={(e) => setWellnessGoal(parseInt(e.target.value))}
-                    readOnly={isWellnessReadOnly}
-                  />
-                  <p className="text-gray-600 px-4">Minutes</p>
-                  {
-                    isWellnessReadOnly ?
-                      <FiEdit className="text-blue-300" size={20} onClick={() => setIsWellnessReadOnly(false)} /> :
-                      <FiCheck className="text-blue-300" size={20} onClick={() => setIsWellnessReadOnly(true)} />
-                  }
+                    <input
+                      className={`appearance-none text-center border rounded w-full py-2 px-3 text-gray-600 leading-tight bg-transparent focus:outline-none focus:shadow-outline ${isWellnessReadOnly ? 'border-none' : 'border'}`}
+                      id="wellness-goal"
+                      type="number"
+                      name="wellness-goal"
+                      value={wellnessGoal}
+                      onChange={(e) => setWellnessGoal(parseInt(e.target.value))}
+                      readOnly={isWellnessReadOnly}
+                    />
+                    <p className="text-gray-600 px-4">Minutes</p>
+                    {
+                      isWellnessReadOnly ?
+                        <FiEdit className="text-blue-300" size={20} onClick={() => setIsWellnessReadOnly(false)} /> :
+                        <FiCheck className="text-blue-300" size={20} onClick={() => setIsWellnessReadOnly(true)} />
+                    }
                   </>
-                </GoalsCard>
-                {/* <div className="flex flex-col text-center w-full mt-5">
-                  <p className="text-xl font-bold title-font text-[#008dff]">
-                    Wellness Activity
-                  </p>
-                </div> */}
+                </GoalCard>
                 <div className="flex space-x-2">
                   <div className="w-1/2 sm:w-2/3">
                     <Input
