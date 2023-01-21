@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from "next/router";
 
-const Header = () => {
+const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   const { pathname } = useRouter();
@@ -20,6 +20,7 @@ const Header = () => {
             </span>
           </Link>
           <div className="flex md:order-2" style={{ marginLeft: "2rem" }}>
+          <button type="button">Connect</button>
             <button
               data-collapse-toggle="mobile-menu-4"
               type="button"
@@ -56,4 +57,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
