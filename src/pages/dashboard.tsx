@@ -65,11 +65,11 @@ const Dashboard = () => {
       <Layout>
         <>
           <Title title="Dashboard" />
-          <div className="flex justify-center max-h-[200px]">
+          <div className="flex justify-center max-h-[200px] mb-10">
             <Doughnut data={data} />
           </div>
           <SubTitle title='Achievements' />
-          <div className="space-y-2">
+          <div className="space-y-2 mt-5">
             <div className="space-x-2 flex">
               <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
               <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />

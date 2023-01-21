@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <div className="flex sm:px-6 sm:py-6 min-h-[calc(100vh-2rem)] flex-cols space-x-2 sm:space-x-5">
                   <Sidebar />
                   <div className="w-full min-h-[calc(100vh-5rem)]">
-                    <div className="bg-white/60 w-full rounded-[10px] min-h-[calc(100vh-5rem)] p-5 md:p-10">
+                    <div className="bg-white/60 w-full rounded-[10px] min-h-[calc(100vh-5rem)] p-5 lg:p-10">
                     {children}
                     </div>
                   </div>

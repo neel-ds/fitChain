@@ -56,7 +56,7 @@ export default function Home() {
             <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
               <div>
                 <Link href="/dashboard" className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border-0 border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-[#00bdff] via-[#008dff] to-[#a13bf7] hover:drop-shadow-[0_3px_5px_#7d7d7d] md:py-2 md:text-lg md:px-8"
-                  >Track Fitness</Link>
+                  >Connect Wallet</Link>
               </div>
             </div>
           </div>
