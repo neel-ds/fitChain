@@ -38,7 +38,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="px-4 md:px-0 mx-auto max-w-[1080px]">
+      <main className="h-full px-4 md:px-0 mx-auto max-w-[1080px]">
         <div className="md:text-left h-[calc(100vh-60px)] flex justify-center flex-row">
           <div className="flex flex-col justify-center">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-7xl pt-5 pb-20 mx-auto">
+        {/* <div className="max-w-7xl pt-5 pb-20 mx-auto">
           <div className="flex flex-col text-center w-full mb-5 md:mb-10">
             <h1 className="text-4xl mb-10 font-bold title-font mb-4 text-[#008dff]">
               Features
@@ -76,7 +76,7 @@ export default function Home() {
             <FeatureCard icon={<SiTrustpilot size={25} />} title="Lorem" desc="Lorem Ipsum is simply dummy text of the printing" />
             <FeatureCard icon={<MdSecurity size={25} />} title="Lorem" desc="Lorem Ipsum is simply dummy text of the printing" />
           </dl>
-        </div>
+        </div> */}
       </main>
     </>
   )

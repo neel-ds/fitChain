@@ -30,8 +30,8 @@ const Profile = () => {
           <Title title="Profile" />
           <div className="px-5">
             <form>
-              <div className="flex space-x-5">
-                <div className="w-1/2 space-y-4">
+              <div className="flex flex-col md:flex-row md:space-x-5">
+                <div className="w-full md:w-1/2 space-y-4">
                   <Input
                     id="name"
                     name="name"
@@ -58,7 +58,7 @@ const Profile = () => {
                   />
 
                 </div>
-                <div className="w-1/2  space-y-4">
+                <div className="w-full md:w-1/2 space-y-4 mt-5 md:mt-0">
                   <Input
                     id="height"
                     name="height"
