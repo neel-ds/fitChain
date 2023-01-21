@@ -27,7 +27,7 @@ const Select = ({
     <div>
       <FormLabel
         htmlFor={id}
-        className="text-gray-700 dark:text-white"
+        className="text-gray-600"
       >
         {label}
       </FormLabel>
@@ -36,13 +36,13 @@ const Select = ({
         id={id}
         name={name}
         onChange={onChange}
-        className="mt-0 text-gray-700 dark:text-white" 
+        className="mt-0 text-gray-500" 
         focusBorderColor="#008dff"
       >
         <option selected hidden disabled value="">{placeholder}</option>
         {
           options?.map(({name, value}) => 
-            <option key={value} className="text-gray-700 dark:text-white" value={value}>{name}</option>
+            <option key={value} className="text-gray-500" value={value}>{name}</option>
           )
         }
       </ChakraInput>

@@ -22,7 +22,7 @@ const Input = ({
     <div>
       <FormLabel 
         htmlFor={id} 
-        className="text-gray-700 dark:text-white" style={{marginRight: 0}}>
+        className="text-gray-600" style={{marginRight: 0}}>
           {label}
       </FormLabel>
       <ChakraInput
@@ -30,7 +30,7 @@ const Input = ({
         name={name}
         onChange={onChange}
         variant="outline" 
-        className="mt-0 text-gray-700 dark:text-white"
+        className="mt-0 text-gray-500"
         focusBorderColor="#008dff" 
         placeholder={placeholder}
         type={type}
