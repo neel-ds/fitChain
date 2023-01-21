@@ -15,7 +15,7 @@ const NavItem = ({ link, icon, name }: NavItemProps) => {
     <li>
       <Link href={link} className="flex justify-center sm:justify-start items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100">
         {icon}
-        <span className="hidden md:flex md:ml-3">{name}</span>
+        <span className="hidden md:flex md:ml-3 text-gray-500">{name}</span>
       </Link>
     </li>
   )
@@ -23,9 +23,9 @@ const NavItem = ({ link, icon, name }: NavItemProps) => {
 
 const Sidebar = () => {
   const navItemObj = [
-    {link: "/dashboard", icon:<GiDigitalTrace size={25} />, name: "Dashboard"},
-    {link: "/fitness", icon:<GiDigitalTrace size={25} />, name: "Fitness"},
-    {link: "/wellness", icon:<GiDigitalTrace size={25} />, name: "Wellness"}
+    {link: "/dashboard", icon:<GiDigitalTrace className="text-blue-300" size={25} />, name: "Dashboard"},
+    {link: "/fitness", icon:<GiDigitalTrace className="text-blue-300" size={25} />, name: "Fitness"},
+    {link: "/wellness", icon:<GiDigitalTrace className="text-blue-300" size={25} />, name: "Wellness"}
   ]
   return (
     <aside className="min-h-[calc(100vh-5rem)] h-[inherit] md:w-64 rounded-[8px] bg-gray-50">
@@ -33,7 +33,7 @@ const Sidebar = () => {
         <div>
           <Link href="/" className="flex justify-center sm:justify-start items-center mb-5">
             <Image src="/fitchain.png" width="50" height="100" className="h-8 md:mr-3 sm:h-10" alt="Fit Chain" />
-            <span className="hidden md:flex self-center text-xl font-semibold whitespace-nowrap">FitChain</span>
+            <span className="hidden md:flex self-center text-xl font-semibold whitespace-nowrap text-[#008dff]">FitChain</span>
           </Link>
           <ul className="space-y-2">
             {
@@ -43,7 +43,7 @@ const Sidebar = () => {
         </div>
       <Link href="/profile" className="relative b-0 flex items-center justify-center mb-3">
         <BiUserCircle className="md:hidden" size={25} />
-        <span className="hidden md:flex self-center text-xl font-semibold whitespace-nowrap">Profile</span>
+        <span className="hidden md:flex self-center text-xl font-semibold whitespace-nowrap text-gray-500">Profile</span>
       </Link>
       </div>
     </aside>
