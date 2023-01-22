@@ -26,10 +26,10 @@ const NavItem = ({ link, icon, name }: NavItemProps) => {
 
 const Sidebar = () => {
   const navItemObj = [
-    {link: "/profile", icon:<CgProfile className="text-[#4ce0d9]" size={25} />, name: "Profile"},
     {link: "/dashboard", icon:<MdOutlineDashboardCustomize className="text-[#4ce0d9]" size={25} />, name: "Dashboard"},
     {link: "/fitness", icon:<IoFitness className="text-[#4ce0d9]" size={25} />, name: "Fitness"},
     {link: "/wellness", icon:<GiLotus className="text-[#4ce0d9]" size={25} />, name: "Wellness"},
+    {link: "/profile", icon:<CgProfile className="text-[#4ce0d9]" size={25} />, name: "Profile"},
   ]
   return (
     <aside className="min-h-[calc(100vh-5rem)] h-[inherit] md:w-64 rounded-[8px] bg-gray-50">
