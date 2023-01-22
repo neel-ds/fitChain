@@ -54,7 +54,7 @@ const Profile = () => {
                     label="Gender"
                     placeholder="Select gender"
                     options={genderOptions}
-                    onChange={(event) => { setGender(event.target.selectedIndex - 1) }}
+                    onChange={() => {}}
                   />
 
                 </div>

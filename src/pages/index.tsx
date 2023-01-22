@@ -39,33 +39,33 @@ export default function Home() {
       </Head>
       <>
         <Navbar />
-        <main className="h-full px-4 md:px-0 mx-auto max-w-[1080px]">
-        <div className="md:text-left h-[calc(100vh-57px)] flex justify-center md:flex-row flex-col items-center">
-          <div className="flex flex-col justify-center">
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-6xl md:text-7xl">
-              <span className="block xl:inline text-gray-700">Welcome to</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#00bdff] to-[#a13bf7] pb-4">
-              FitChain
-              </span>
-              <span className="block text-[#008dff] font-medium text-2xl sm:text-3xl">
-                Decentralized Fitness Platform
-              </span>
-            </h1>
-            <p className="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              Incentivize your weekly wellness goals with us!
-            </p>
-            <div className="mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
-              <div>
-                <Link href="/dashboard" className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-3 border-0 border-transparent text-base font-medium rounded-3xl text-white bg-gradient-to-r from-[#00bdff] to-[#008dff] hover:drop-shadow-[0_3px_5px_#7d7d7d] md:py-2 md:text-lg md:px-8"
+        <main className="px-4 lg:px-0 mx-auto max-w-[1080px]">
+          <div className="md:text-left h-[calc(100vh-49px)] w-full flex justify-between sm:flex-row flex-col">
+            <div className="flex flex-col justify-center  mt-[70px]">
+              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl lg:text-7xl">
+                <span className="block xl:inline text-gray-700">Welcome to</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#00bdff] to-[#a13bf7] pb-4">
+                  FitChain
+                </span>
+                <span className="block text-[#008dff] font-medium text-2xl lg:text-3xl">
+                  Decentralized Fitness Platform
+                </span>
+              </h1>
+              <p className="mt-1 text-base text-gray-600 lg:mt-5 md:text-xl">
+                Incentivize your weekly wellness goals with us!
+              </p>
+              <div className="max-w-[200px] mt-5 sm:mt-8 sm:flex lg:justify-start md:flex-col lg:flex-row">
+                <div>
+                  <Link href="/dashboard" className="w-full md:w-[70%] lg:w-full flex items-center justify-center px-8 py-2 border-0 border-transparent text-base font-medium rounded-3xl text-white bg-gradient-to-r from-[#00bdff] to-[#008dff] hover:drop-shadow-[0_3px_5px_#7d7d7d] md:text-lg md:px-8"
                   >Explore</Link>
+                </div>
               </div>
             </div>
+            <div className="overflow-y-hidden flex w-[60%] md:w-[50%] mx-auto items-center justify-center md:justify-end md:mr-0 md:mt-[70px]">
+              <Image src="/fitVector.png" width="600" height="500" alt="Banner" />
+            </div>
           </div>
-          <div className="flex my-auto w-[75%] md:w-[52%] md:ml-12 items-end ">
-            <Image src="/fitVector.png" width="600" height="500" alt="Banner" />
-          </div>
-        </div>
-      </main>
+        </main>
         <Footer />
       </>
     </>

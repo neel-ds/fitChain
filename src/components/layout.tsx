@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <main className="md:px-0 mx-auto max-w-full min-h-[calc(100vh-2rem)] p-2 sm:p-4">
+    <main className="mx-auto max-w-full min-h-[calc(100vh-2rem)] p-2 sm:p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col text-center w-full">
           <div className="w-full overflow-x-hidden overflow-y-auto md:inset-0 justify-center flex md:h-full">
