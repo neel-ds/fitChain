@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Title from '@/components/title'
 import Input from '../components/form-elements/input'
 import Select from '../components/form-elements/select'
 import Button from '../components/form-elements/button'
 import Layout from '@/components/layout'
+import { useToast } from '@chakra-ui/react'
+import { usePrepareContractWrite, useContractWrite, useWaitForTransaction } from 'wagmi'
+import ABI from '../contracts/ABI.json'
+import { CONTRACT_ADDRESS } from '@/utils/contractAddress'
 
 const Profile = () => {
   const [name, setName] = useState('');
@@ -17,6 +21,36 @@ const Profile = () => {
     { name: 'Male', value: 'male' },
     { name: 'Female', value: 'female' }
   ]
+
+  const toast = useToast();
+
+  const { config } = usePrepareContractWrite({
+    address: CONTRACT_ADDRESS,
+    abi: ABI,
+    functionName: "setUserDetails",
+    args: [
+      name, parseInt(age), height, weight, gender
+    ],
+  });
+
+  const { data, write } = useContractWrite(config);
+
+  const { isLoading, isSuccess } = useWaitForTransaction({
+    hash: data?.hash,
+  });
+  
+  useEffect(() => {
+    if(isSuccess) {
+      toast({
+        title: "User registered",
+        description: "User has been registered successfully",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+  }, [isSuccess]);
+
   return (
     <>
       <Head>
@@ -54,7 +88,7 @@ const Profile = () => {
                     label="Gender"
                     placeholder="Select gender"
                     options={genderOptions}
-                    onChange={() => {}}
+                    onChange={(e) => setGender(e.target.selectedIndex - 1)}
                   />
 
                 </div>
@@ -78,7 +112,7 @@ const Profile = () => {
                 </div>
               </div>
               <div className="max-w-[200px] flex m-auto mt-10">
-                <Button label="Register" onClick={() => { }} />
+                <Button label="Register" onClick={() => { write?.() }} />
               </div>
             </form>
           </div>
