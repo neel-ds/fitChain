@@ -59,6 +59,11 @@
 				"internalType": "uint256",
 				"name": "_weight",
 				"type": "uint256"
+			},
+			{
+				"internalType": "enum UserGoals.Gender",
+				"name": "_gender",
+				"type": "uint8"
 			}
 		],
 		"name": "setUserDetails",
@@ -182,6 +187,11 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			},
+			{
+				"internalType": "enum UserGoals.Gender",
+				"name": "",
+				"type": "uint8"
 			}
 		],
 		"stateMutability": "view",

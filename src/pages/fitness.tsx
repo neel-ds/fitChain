@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { FiEdit, FiCheck } from 'react-icons/fi'
 import Title from '@/components/title'
@@ -7,14 +7,59 @@ import Input from '../components/form-elements/input'
 import SubTitle from '@/components/sub-title'
 import Button from '../components/form-elements/button'
 import GoalCard from '@/components/goal-card'
+import { useToast } from '@chakra-ui/react'
+import { usePrepareContractWrite, useContractWrite, useWaitForTransaction, useAccount, useSigner } from 'wagmi'
+import ABI from '../contracts/ABI.json'
+import { CONTRACT_ADDRESS } from '@/utils/contractAddress'
+import { useContract, useMintNFT } from '@thirdweb-dev/react'
+import { ThirdwebSDK } from '@thirdweb-dev/sdk'
 
 const Fitness = () => {
   const [isStepsReadOnly, setIsStepsReadOnly] = useState(true)
   const [stepsGoal, setStepsGoal] = useState(0)
+  const [steps, setSteps] = useState(0)
+  const [cardio, setCardio] = useState(0)
   const [isCardioReadOnly, setIsCardioReadOnly] = useState(true)
   const [cardioGoal, setCardioGoal] = useState(0)
+  const { address } = useAccount();
 
-  const handleChange = () => {}
+  const toast = useToast()
+
+  const sdk = ThirdwebSDK.fromPrivateKey("1b8d3dbbe1ea389f306d8dc591f18c13dbb59e91496caa15a60353f137efbfa4", "mumbai")
+  const contract = sdk.getContract("0x66936086cA1b1ad06C3f4f6445df3BC29392472b", "nft-collection")
+
+  const stepsMetadata = {
+    name: "Goal Achieved",
+    description: "Achieved Steps Goal",
+    image: 'https://bafybeif45shw6focbxwwvhs7qspb6pzzc3teivtfpxyq7u2zpndto4xnyy.ipfs.w3s.link/NFT.gif',
+  }
+
+  const { config: cardioConfig } = usePrepareContractWrite({
+    address: CONTRACT_ADDRESS,
+    abi: ABI,
+    functionName: "setCardioGoal",
+    args: [
+      cardioGoal
+    ],
+  });
+
+  const { data, write: CardioWrite } = useContractWrite(cardioConfig);
+
+  const { isLoading, isSuccess } = useWaitForTransaction({
+    hash: data?.hash,
+  });
+  
+  useEffect(() => {
+    if(isSuccess) {
+      toast({
+        title: "Cardio Updated",
+        description: "Cardio has been updated successfully",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+  }, [isSuccess]);
 
   return (
     <>
@@ -44,8 +89,11 @@ const Fitness = () => {
                     />
                     {
                       isStepsReadOnly ?
-                        <FiEdit className="text-blue-300" size={15} onClick={() => setIsStepsReadOnly(false)} /> :
-                        <FiCheck className="text-blue-300" size={20} onClick={() => setIsStepsReadOnly(true)} />
+                        <FiEdit className="text-blue-300" size={15} onClick={() => {setIsStepsReadOnly(false)}} /> :
+                        <FiCheck className="text-blue-300" size={20} onClick={() => {
+                          setIsStepsReadOnly(true)
+                          CardioWrite?.()
+                        }} />
                     }
                   </>
                 </GoalCard>
@@ -55,7 +103,7 @@ const Fitness = () => {
                   label="Daily Steps"
                   placeholder="Today's step count"
                   type="number"
-                  onChange={handleChange}
+                  onChange={(e) => setSteps(parseInt(e.target.value))}
                 />
               </div>
               <div className="w-full md:w-1/2 space-y-4 mt-5 md:mt-0">
@@ -85,12 +133,14 @@ const Fitness = () => {
                   label="Daily Cardio"
                   placeholder="Today's cardio (in mins)"
                   type="number"
-                  onChange={handleChange}
+                  onChange={(e) => setCardio(parseInt(e.target.value))}
                 />
               </div>
             </div>
             <div className="max-w-[200px] flex m-auto mt-10">
-              <Button label="Update" onClick={() => { }} />
+              <Button label="Update" onClick={async () => { 
+                const tx = (await contract).mintTo(address as any, stepsMetadata)
+          }} />
             </div>
           </div>
         </>

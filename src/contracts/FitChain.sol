@@ -1,11 +1,18 @@
 pragma solidity ^0.8.0;
 
 contract UserGoals {
+
+    enum Gender {
+        MALE,
+        FEMALE
+    }
+
     struct User {
         string name;
         uint age;
         uint height;
         uint weight;
+        Gender gender;
         uint stepGoal;
         uint sleepGoal;
         uint wellnessGoal;
@@ -17,11 +24,12 @@ contract UserGoals {
     }
     mapping(address => User) users;
 
-    function setUserDetails(string memory _name, uint _age, uint _height, uint _weight) public {
+    function setUserDetails(string memory _name, uint _age, uint _height, uint _weight, Gender _gender) public {
         users[msg.sender].name = _name;
         users[msg.sender].age = _age;
         users[msg.sender].height = _height;
         users[msg.sender].weight = _weight;
+        users[msg.sender].gender = _gender;
     }
 
     function setStepGoal(uint _stepGoal) public {
@@ -56,8 +64,8 @@ contract UserGoals {
         users[msg.sender].cardio += _cardio;
     }
 
-    function getUserDetails() public view returns (string memory, uint, uint, uint) {
-        return (users[msg.sender].name, users[msg.sender].age, users[msg.sender].height, users[msg.sender].weight);
+    function getUserDetails() public view returns (string memory, uint, uint, uint, Gender) {
+        return (users[msg.sender].name, users[msg.sender].age, users[msg.sender].height, users[msg.sender].weight, users[msg.sender].gender);
     }
 
     function getWeeklyGoals() public view returns (uint, uint, uint, uint) {
