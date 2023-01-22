@@ -7,7 +7,7 @@ interface SubTitleProps {
 const SubTitle = ({ title }: SubTitleProps) => {
   return (
     <div className="flex flex-col text-center w-full">
-      <h2 className="text-2xl font-bold title-font text-[#008dff]">
+      <h2 className="text-2xl font-semibold title-font text-[#00bdff]">
         {title}
       </h2>
     </div>

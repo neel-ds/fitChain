@@ -31,7 +31,7 @@ const Wellness = () => {
             <div className="flex flex-col md:flex-row md:space-x-5">
               <div className="w-full md:w-1/2 space-y-4">
                 <SubTitle title='Sleep' />
-                <GoalCard title="Weekly Sleep Goals">
+                <GoalCard title="Weekly Sleep Goal">
                   <>
                     <input
                       className={`appearance-none text-center border rounded w-full py-2 px-3 text-gray-600 leading-tight bg-transparent focus:outline-none focus:shadow-outline ${isSleepReadOnly ? 'border-none' : 'border'}`}
@@ -54,7 +54,7 @@ const Wellness = () => {
                   id="sleep"
                   name="sleep"
                   label="Hours Sleept"
-                  placeholder="Weekly Sleep (Hr)"
+                  placeholder="Daily Sleep (in hours)"
                   type="number"
                   onChange={handleChange}
                 />
@@ -72,7 +72,7 @@ const Wellness = () => {
                       onChange={(e) => setWellnessGoal(parseInt(e.target.value))}
                       readOnly={isWellnessReadOnly}
                     />
-                    <p className="text-gray-600 px-4">Minutes</p>
+                    <p className="text-gray-600 px-4">Hours</p>
                     {
                       isWellnessReadOnly ?
                         <FiEdit className="text-blue-300" size={20} onClick={() => setIsWellnessReadOnly(false)} /> :

@@ -62,23 +62,23 @@ const Profile = () => {
                   <Input
                     id="height"
                     name="height"
-                    label="Height (in cm)"
-                    placeholder="Height"
+                    label="Height"
+                    placeholder="Height (in cm)"
                     type="number"
                     onChange={(e) => setHeight(e.target.value)}
                   />
                   <Input
                     id="weight"
                     name="weight"
-                    label="Weight (in Kg)"
-                    placeholder="Weight"
+                    label="Weight"
+                    placeholder="Weight (in Kg)"
                     type="number"
                     onChange={(e) => setWeight(e.target.value)}
                   />
                 </div>
               </div>
               <div className="max-w-[200px] flex m-auto mt-10">
-                <Button label="Update Profile" onClick={() => { }} />
+                <Button label="Register" onClick={() => { }} />
               </div>
             </form>
           </div>
