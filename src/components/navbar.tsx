@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="max-w-[1080px] container flex flex-wrap justify-between items-center mx-auto">
           <Link href="/" className="flex items-center flex-1">
             <span className="flex flex-row items-center self-center text-2xl font-bold whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-[#00bdff] to-[#008dff]">
-              <Image className="mr-2" src="/fitchain.png" width="40" height="60" alt="FitChain" />
+              <Image className="mr-2" src="/fitchain.png" width="60" height="80" alt="FitChain" />
               FitChain
             </span>
           </Link>

@@ -31,7 +31,7 @@ const Fitness = () => {
             <div className="flex flex-col md:flex-row md:space-x-5">
               <div className="w-full md:w-1/2 space-y-4">
                 <SubTitle title='Steps' />
-                <GoalCard title="Weekly Steps Goals">
+                <GoalCard title="Weekly Steps Goal">
                   <>
                     <input
                       className={`appearance-none text-center border rounded w-full py-2 px-3 text-gray-600 leading-tight bg-transparent focus:outline-none focus:shadow-outline ${isStepsReadOnly ? 'border-none' : 'border'}`}
@@ -52,8 +52,8 @@ const Fitness = () => {
                 <Input
                   id="steps"
                   name="steps"
-                  label="Weekly Steps"
-                  placeholder="Weekly Steps"
+                  label="Daily Steps"
+                  placeholder="Today's step count"
                   type="number"
                   onChange={handleChange}
                 />
@@ -71,7 +71,7 @@ const Fitness = () => {
                       onChange={(e) => setCardioGoal(parseInt(e.target.value))}
                       readOnly={isCardioReadOnly}
                     />
-                    <p className="text-gray-600 px-4">Minutes</p>
+                    <p className="text-gray-600 px-4">Hours</p>
                     {
                       isCardioReadOnly ?
                         <FiEdit className="text-blue-300" size={20} onClick={() => setIsCardioReadOnly(false)} /> :
@@ -82,8 +82,8 @@ const Fitness = () => {
                 <Input
                   id="cardio"
                   name="cardio"
-                  label="Weekly Cardio"
-                  placeholder="Weekly Cardio"
+                  label="Daily Cardio"
+                  placeholder="Today's cardio (in mins)"
                   type="number"
                   onChange={handleChange}
                 />
