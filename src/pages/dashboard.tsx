@@ -71,14 +71,9 @@ const Dashboard = () => {
           <SubTitle title='Achievements' />
           <div className="space-y-2 mt-5">
             <div className="space-x-2 flex">
-              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
-              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
-              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
-            </div>
-            <div className="space-x-2 flex">
-              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
-              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
-              <Card title="Card title" desc="Lorem Ipsum is simply dummy text of the printing" img="/heart.jpg" goals={["a", "b", "c"]} />
+              <Card title="Fitness Freak" desc="Exercise and cardio consistently" img="/muscle.png" goals={["3"]} />
+              <Card title="Mental Care" desc="More contribution towards wellness" img="/mental-health.png" goals={["6"]} />
+              <Card title="YOLO" desc="You only live once, do meditation" img="/heart.jpg" goals={["4"]} />
             </div>
           </div>
         </>
